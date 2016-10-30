@@ -1,0 +1,24 @@
+spring:
+    datasource:
+        password: ${JDBC_DATABASE_PASSWORD}
+        testWhileIdle: true
+        url: ${JDBC_DATABASE_URL}
+        username: ${JDBC_DATABASE_USERNAME}
+        validationQuery: SELECT 1
+    jpa:
+        hibernate:
+            naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        show-sql: true
+
+security:
+  oauth2:
+    client:
+      clientId: 528830773985724
+      clientSecret: a09e6540817cb757faeb6cd9ed13305a
+      accessTokenUri: https://graph.facebook.com/oauth/access_token
+      userAuthorizationUri: https://www.facebook.com/dialog/oauth
+      tokenName: oauth_token
+      authenticationScheme: query
+      clientAuthenticationScheme: form
+    resource:
+      userInfoUri: https://graph.facebook.com/me
